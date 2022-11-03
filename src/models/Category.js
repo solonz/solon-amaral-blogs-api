@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
     } 
   }, {
     underscored: true,
-    tableName: 'Category',
-    timestamps: false,
+    tableName: 'categories',
+    timestamps: true,
     modelName: 'Category',
   });
   return Category;
