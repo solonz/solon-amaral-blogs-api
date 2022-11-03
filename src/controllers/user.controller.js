@@ -10,19 +10,12 @@ const addUser = async (req, res) => {
   return res.status(201).json({ token: message });
 };
 
-//   const { displayName, email, password } = req.body;
-//   const userValidation = validateUser(req.body);
-//   console.log(userValidation);
-//   if (userValidation.message) {
-//     return res.status(400).json(userValidation.message);
-//   }
-//   const result = await userService.addUser(displayName, email, password);
-//   if (result.type) {
-//     return res.status(409).json({ message: result.message });
-//   }
-//   return res.status(201).json({ token: result });
-// };
+const getUser = async (_req, res) => {
+const { message } = await userService.getUser();
+res.status(200).json(message);
+};
 
 module.exports = { 
     addUser,
+    getUser,
  };
