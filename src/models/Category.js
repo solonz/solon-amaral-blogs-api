@@ -1,19 +1,18 @@
-module.exports = (sequelize, DataTypes) => {
+const CategorySchema = (sequelize, DataTypes) => {
   const Category = sequelize.define('Category', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    } 
-  }, {
-    underscored: true,
+    name: DataTypes.STRING
+  },
+  {
     tableName: 'categories',
-    timestamps: true,
-    modelName: 'Category',
-  });
+    underscored: true,
+    timestamps: false
+  })
   return Category;
-};
+}
+
+module.exports = CategorySchema;
