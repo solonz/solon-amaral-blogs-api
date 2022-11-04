@@ -4,8 +4,7 @@ const categoryService = require('../services/category.service');
 const addCategory = async (req, res) => {
     const { name } = req.body;
     if (!name || name.length < 1) {
-        // eslint-disable-next-line quotes
-        return res.status(400).json({ message: "\"name\" is required" });
+        return res.status(400).json({ message: '"name" is required' });
     }
     const { message } = await categoryService.addCategory(name);
     return res.status(201).json({ id: message.id, name });
