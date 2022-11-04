@@ -11,10 +11,10 @@ const addCategory = async (req, res) => {
     return res.status(201).json({ id: message.id, name });
 };
 
-// const getUser = async (_req, res) => {
-// const { message } = await userService.getUser();
-// res.status(200).json(message);
-// };
+const getCategory = async (_req, res) => {
+const { message } = await categoryService.getCategory();
+res.status(200).json(message);
+};
 
 // const getUserById = async (req, res) => {
 // const { id } = req.params;
@@ -25,6 +25,6 @@ const addCategory = async (req, res) => {
 
 module.exports = { 
     addCategory,
-    // getUser,
+    getCategory,
     // getUserById,
  };

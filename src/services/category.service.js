@@ -7,10 +7,10 @@ const result = await Category.create({ name });
   return { message: result };
 };
 
-// const getUser = async () => {
-// const allUsers = await User.findAll({ attributes: { exclude: ['password'] } });
-// return { type: null, message: allUsers };
-// };
+const getCategory = async () => {
+const allCategories = await Category.findAll();
+return { type: null, message: allCategories };
+};
 
 // const getUserById = async (id) => {
 // const specificUser = await User.findByPk(id, { attributes: { exclude: ['password'] } });
@@ -20,6 +20,6 @@ const result = await Category.create({ name });
 
 module.exports = {
     addCategory,
-//   getUser,
+    getCategory,
 //   getUserById,
 };
